@@ -42,13 +42,13 @@ int main() {
 	close(pipefd[0]);
 	FILE* pipe = fdopen(pipefd[1], "w");
 
-	fprintf(pipe, "set terminal wx size 1024,768\nset yrange [-3:3]\n"); //set nokey\n
+	fprintf(pipe, "set terminal wx size 1024,768\nset yrange [-3:3]\nset xrange [-10:10]\n"); //set nokey\n
 	fprintf(pipe, "set arrow from -6.28,100 to -6.28,-100 nohead\nset arrow from 6.28,100 to 6.28,-100 nohead\n");
 	fprintf(pipe, "set yzeroaxis\nset xzeroaxis\n");
 
 	double step = 0.1;
-	double start = -10;
-	double end = 10;
+	double start = -50;
+	double end = 50;
 
 	int level = 1;
 	do {
@@ -61,11 +61,6 @@ int main() {
 		sleep(1);
 
 		level++;
-
-		if(level >= 20) {
-			level = 1;
-		}
-
 	} while(1);
 
 	waitpid(pid, &status, 0);
