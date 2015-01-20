@@ -42,7 +42,7 @@ int main() {
 	close(pipefd[0]);
 	FILE* pipe = fdopen(pipefd[1], "w");
 
-	fprintf(pipe, "set terminal wx size 1024,768\nset yrange [-3:3]\nset xrange [-10:10]\n"); //set nokey\n
+	fprintf(pipe, "set terminal wx size 1024,768\nset yrange [-3:3]\nset xrange [-10:10]\nset term wxt noraise\n"); //set nokey\n
 	fprintf(pipe, "set arrow from -6.28,100 to -6.28,-100 nohead\nset arrow from 6.28,100 to 6.28,-100 nohead\n");
 	fprintf(pipe, "set yzeroaxis\nset xzeroaxis\n");
 
