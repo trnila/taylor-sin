@@ -13,7 +13,7 @@ double ref(double x, int level) {
 void drawFn(FILE* pipe, double start, double end, double step, double (*fn)(double, int), int level) {
 	double current = start;
 	while(current <= end) {
-		fprintf(pipe, "%.2f %.2f\n", current, fn(current, level));
+		fprintf(pipe, "%.10f %.10f\n", current, fn(current, level));
 
 		current += step;
 	}

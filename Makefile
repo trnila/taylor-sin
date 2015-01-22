@@ -1,4 +1,4 @@
-FLAGS=-lgmpxx -lgmp
+FLAGS=-lgmp
 
 taylor: main.o fn.o
 	g++ $(FLAGS) $^ -o taylor
